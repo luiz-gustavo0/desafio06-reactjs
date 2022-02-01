@@ -56,3 +56,36 @@ export const continents = [
     image: '/images/image-slide-6.png',
   },
 ];
+
+export const countries = [
+  {
+    name: 'Holanda',
+    capital: 'Amsterdã',
+    image: '/images/foto-amsterda.png',
+    flag: '/images/bandeira-holanda.png',
+  },
+  {
+    name: 'Reino Unido',
+    capital: 'Londres',
+    image: '/images/foto-londres.png',
+    flag: '/images/bandeira-inglaterra.png',
+  },
+  {
+    name: 'França',
+    capital: 'Paris',
+    image: '/images/foto-paris.png',
+    flag: '/images/bandeira-franca.png',
+  },
+  {
+    name: 'República Theca',
+    capital: 'Praga',
+    image: '/images/foto-praga.png',
+    flag: '/images/bandeira-theca.png',
+  },
+  {
+    name: 'Itália',
+    capital: 'Roma',
+    image: '/images/foto-roma.png',
+    flag: '/images/bandeira-italia.png',
+  },
+];
