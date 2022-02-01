@@ -1,23 +1,37 @@
-import { Box, Image, Text } from '@chakra-ui/react';
+import { Box, Image, Tag, Text } from '@chakra-ui/react';
 
 interface TraveTypeCardProps {
   label: string;
   imgSrc: string;
 }
 
-export const TravelTypeCard = ({ label, imgSrc }: TraveTypeCardProps) => {
+const TravelTypeCard = ({ label, imgSrc }: TraveTypeCardProps) => {
   return (
     <Box
-      h={145}
+      h={['auto', 'auto', '145px']}
       display='flex'
-      flexDir='column'
-      alignItems={'center'}
-      justifyContent={'center'}
+      flexDir={['row', 'row', 'column']}
+      alignItems='center'
+      justifyContent={['flex-start', 'center']}
+      gap='2'
     >
-      <Image src={imgSrc} alt='image' width={85} height={85} />
+      <Image
+        src={imgSrc}
+        alt='image'
+        width={85}
+        height={85}
+        display={['none', 'none', 'block']}
+      />
+      <Box
+        display={['block', 'block', 'none']}
+        bgColor='yellow'
+        width='8px'
+        height='8px'
+        rounded='full'
+      ></Box>
       <Text
-        fontSize='2xl'
-        lineHeight='9'
+        fontSize={['lg', 'lg', '2xl']}
+        lineHeight={['27px', '27px', '9']}
         fontWeight='600'
         mt='1.5'
         color='gray.800'
@@ -27,3 +41,5 @@ export const TravelTypeCard = ({ label, imgSrc }: TraveTypeCardProps) => {
     </Box>
   );
 };
+
+export default TravelTypeCard;

@@ -1,44 +1,12 @@
-import {
-  Box,
-  Divider,
-  Flex,
-  Heading,
-  Image,
-  Text,
-  useBreakpointValue,
-} from '@chakra-ui/react';
 import type { NextPage } from 'next';
-import Header from '../components/Header';
-import { TravelTypeCard } from '../components/TravelTypeCard';
+import { Box, Divider, Flex, Heading, Image, Text } from '@chakra-ui/react';
 
-const travelTypes = [
-  {
-    label: 'vida noturna',
-    icon: '/images/cocktail.svg',
-  },
-  {
-    label: 'praia',
-    icon: '/images/surf.svg',
-  },
-  {
-    label: 'moderno',
-    icon: '/images/building.svg',
-  },
-  {
-    label: 'clássico',
-    icon: '/images/museum.svg',
-  },
-  {
-    label: 'e mais',
-    icon: '/images/earth.svg',
-  },
-];
+import Header from '../components/Header';
+import TravelTypeCard from '../components/TravelTypeCard';
+import Slide from '../components/Slide';
+import { continents, travelTypes } from '../constants/data';
 
 const Home: NextPage = () => {
-  const isWideVersion = useBreakpointValue({
-    base: false,
-    lg: true,
-  });
   return (
     <>
       <Header />
@@ -99,7 +67,9 @@ const Home: NextPage = () => {
         mt='20'
         px='4'
         alignItems='center'
-        justifyContent='space-between'
+        justifyContent={['center', 'space-between']}
+        flexWrap='wrap'
+        gap='3'
       >
         {travelTypes.map((item) => (
           <TravelTypeCard
@@ -120,8 +90,8 @@ const Home: NextPage = () => {
         <Box maxWidth={839} mx='auto'>
           <Text
             textAlign='center'
-            fontSize='4xl'
-            lineHeight='54px'
+            fontSize={['xl', '4xl']}
+            lineHeight={['30px', '54px']}
             color='gray.800'
             fontWeight='500'
           >
@@ -129,6 +99,9 @@ const Home: NextPage = () => {
             Escolha seu continente
           </Text>
         </Box>
+      </Box>
+      <Box maxWidth={1200} mx='auto' mt='14' mb='10' px='4'>
+        <Slide continents={continents} />
       </Box>
     </>
   );
